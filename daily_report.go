@@ -11,7 +11,7 @@ const (
 	urlGetDailyReport = "/ess/report/getDailyReport"
 )
 
-// 日报中的地址信息
+// Address 表示日报中的地址信息
 type Address struct {
 	Prprovince string `json:"prprovince"` //省
 	Prcity     string `json:"prcity"`     //市
@@ -19,7 +19,7 @@ type Address struct {
 	Prstreet   string `json:"prstreet"`   //街
 }
 
-// 上传的日报结构
+// ReportUpload 表示上传的日报结构
 type ReportUpload struct {
 	StudId       string `json:"studId"`       //学生ID
 	Type         string `json:"type"`         //学生状态: 5无、1居家隔离、2确诊、3疑似、4留观
@@ -31,7 +31,7 @@ type ReportUpload struct {
 	Address
 }
 
-// 下载的日报结构
+// ReportDownload 表示下载的日报结构
 type ReportDownload struct {
 	Address
 

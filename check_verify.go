@@ -8,6 +8,7 @@ const (
 	urlCheckVerify = "/ess/report/checkVerify"
 )
 
+// VerifyInfo 表示当日填写状况检查信息
 type VerifyInfo struct {
 	Contact        string
 	HasBasicInfo   bool

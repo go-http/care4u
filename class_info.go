@@ -8,6 +8,7 @@ const (
 	urlGetClassInfo = "/ess/report/getClassInfo"
 )
 
+// ClassInfo 表示班级信息
 type ClassInfo struct {
 	Id         string
 	ClassName  string

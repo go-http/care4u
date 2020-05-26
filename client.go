@@ -5,6 +5,7 @@ import (
 	"net/url"
 )
 
+// Client 代表一个和服务器通信的学生实体
 type Client struct {
 	ClassId   string
 	StudentId string
