@@ -23,7 +23,7 @@ func GetClassInfo(code string) (*ClassInfo, error) {
 
 	var info ClassInfo
 
-	err := Post(UrlGetClassInfo, "", param, &info)
+	err := post(UrlGetClassInfo, "", param, &info)
 
 	return &info, err
 }

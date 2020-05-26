@@ -60,7 +60,7 @@ func (cli *Client) GetDailyReport() (*ReportDownload, error) {
 
 	var info ReportDownload
 
-	err := cli.Post(UrlGetDailyReport, param, &info)
+	err := cli.post(UrlGetDailyReport, param, &info)
 
 	return &info, err
 }
@@ -85,7 +85,7 @@ func (cli *Client) SetDailyReport(report ReportUpload) error {
 		"data": {string(data)},
 	}
 
-	err = cli.Post(UrlDailyReport, param, nil)
+	err = cli.post(UrlDailyReport, param, nil)
 
 	return err
 }

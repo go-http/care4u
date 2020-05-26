@@ -39,9 +39,9 @@ func New(classCode, studentName string) (*Client, error) {
 	return client, nil
 }
 
-// Post 自动发起请求，并带上Token（如果不为空）
-func (cli *Client) Post(urlPath string, param url.Values, respData interface{}) error {
-	return Post(urlPath, cli.Token, param, respData)
+// post 自动发起请求，并带上Token（如果不为空）
+func (cli *Client) post(urlPath string, param url.Values, respData interface{}) error {
+	return post(urlPath, cli.Token, param, respData)
 }
 
 // HasDailyReport 返回当日是否已经上报健康信息

@@ -31,7 +31,7 @@ func CheckVerify(classId, stuName string) (*VerifyInfo, error) {
 
 	var info VerifyInfo
 
-	err := Post(UrlCheckVerify, "", param, &info)
+	err := post(UrlCheckVerify, "", param, &info)
 
 	return &info, err
 }

@@ -26,13 +26,13 @@ var generalHeaders = map[string]string{
 // ResponseCommon 代表API返回的通用数据
 // 其中的Data字段，当有数据时是实际的数据结构，没有数据时是空字符串
 // 这样的设计在Golang的标准库中无法直接解析，因此视作json.RawMessage以懒加载
-type ResponseCommon struct {
+type responseCommon struct {
 	Msg   string
 	State int
 	Data  json.RawMessage
 }
 
-func (r *ResponseCommon) Error() error {
+func (r *responseCommon) Error() error {
 	if r.State != 1 || r.Msg != "success" {
 		return fmt.Errorf("[%d]%s", r.State, r.Msg)
 	}
@@ -40,7 +40,7 @@ func (r *ResponseCommon) Error() error {
 	return nil
 }
 
-func Post(urlPath, token string, param url.Values, respData interface{}) error {
+func post(urlPath, token string, param url.Values, respData interface{}) error {
 	// 设置公共的API版本号参数
 	if param == nil {
 		param = url.Values{}
@@ -67,7 +67,7 @@ func Post(urlPath, token string, param url.Values, respData interface{}) error {
 	}
 	defer resp.Body.Close()
 
-	var respInfo ResponseCommon
+	var respInfo responseCommon
 	err = json.NewDecoder(resp.Body).Decode(&respInfo)
 	if err != nil {
 		return err
