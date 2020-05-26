@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	UrlCheckVerify = "/ess/report/checkVerify"
+	urlCheckVerify = "/ess/report/checkVerify"
 )
 
 type VerifyInfo struct {
@@ -31,7 +31,7 @@ func CheckVerify(classId, stuName string) (*VerifyInfo, error) {
 
 	var info VerifyInfo
 
-	err := post(UrlCheckVerify, "", param, &info)
+	err := post(urlCheckVerify, "", param, &info)
 
 	return &info, err
 }

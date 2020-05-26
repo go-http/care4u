@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	UrlGetClassInfo = "/ess/report/getClassInfo"
+	urlGetClassInfo = "/ess/report/getClassInfo"
 )
 
 type ClassInfo struct {
@@ -23,7 +23,7 @@ func GetClassInfo(code string) (*ClassInfo, error) {
 
 	var info ClassInfo
 
-	err := post(UrlGetClassInfo, "", param, &info)
+	err := post(urlGetClassInfo, "", param, &info)
 
 	return &info, err
 }

@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	UrlDailyReport    = "/ess/report/dailyReport"
-	UrlGetDailyReport = "/ess/report/getDailyReport"
+	urlDailyReport    = "/ess/report/dailyReport"
+	urlGetDailyReport = "/ess/report/getDailyReport"
 )
 
 // 日报中的地址信息
@@ -60,7 +60,7 @@ func (cli *Client) GetDailyReport() (*ReportDownload, error) {
 
 	var info ReportDownload
 
-	err := cli.post(UrlGetDailyReport, param, &info)
+	err := cli.post(urlGetDailyReport, param, &info)
 
 	return &info, err
 }
@@ -85,7 +85,7 @@ func (cli *Client) SetDailyReport(report ReportUpload) error {
 		"data": {string(data)},
 	}
 
-	err = cli.post(UrlDailyReport, param, nil)
+	err = cli.post(urlDailyReport, param, nil)
 
 	return err
 }
